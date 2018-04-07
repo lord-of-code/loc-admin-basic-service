@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: basic
+  profiles:
+    active: dev
+
+server:
+  port: 6661
+  servlet:
+    context-path: /${spring.application.name}
+
+logging:
+  file: /data/logs/loc.log
+  path: /data/logs
+
+loc:
+  web:
+    springmvc:
+      swagger2:
+        restapi:
+          base-package: com.loc.admin.basic.controller
+        apiinfo:
+          title: "loc-admin基础服务"
+          description: "给loc-admin提供的用于操作基础数据的接口"
+          version: "v1"
+          contactName: "loc-admin-basic项目"
+          license: "MIT"
+          license-url: "https://opensource.org/licenses/MIT"
