@@ -1,5 +1,6 @@
 package com.loc.admin.basic.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -32,6 +33,7 @@ public class Province implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @JsonIgnore
   private Integer id;
 
 

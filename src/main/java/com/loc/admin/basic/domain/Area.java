@@ -1,5 +1,6 @@
 package com.loc.admin.basic.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
  * Created on 2018/4/7.
  */
 @Entity
-@Table(name = "city")
+@Table(name = "area")
 @Builder
 @Data
 @NoArgsConstructor
@@ -27,6 +28,7 @@ public class Area implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @JsonIgnore
   private Integer id;
 
   @Column(nullable = false)
@@ -35,6 +37,9 @@ public class Area implements Serializable {
   @Column(nullable = false)
   private Integer areaId;
 
+//  @ManyToOne
+//  @JoinColumn(name = "city_id", referencedColumnName = "cityId")
+  @JsonIgnore
   @Column(nullable = false)
   private Integer cityId;
 

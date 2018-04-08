@@ -1,5 +1,6 @@
 package com.loc.admin.basic.controller;
 
+import com.loc.admin.basic.domain.Area;
 import com.loc.admin.basic.domain.City;
 import com.loc.admin.basic.domain.Province;
 import com.loc.admin.basic.service.AreaService;
@@ -36,5 +37,19 @@ public class AreaController {
       @RequestParam(value = "name", required = false) String name
   ) {
     return BasicResult.success(areaService.getCity(provinceId, name));
+  }
+
+  @RequestMapping(path = "getArea", method = RequestMethod.GET)
+  public BasicResult<List<Area>> getArea(
+      @RequestParam(value = "cityId", required = false) Integer cityId,
+      @RequestParam(value = "name", required = false) String name
+  ) {
+    return BasicResult.success(areaService.getArea(cityId, name));
+  }
+
+  @RequestMapping(path = "initCache", method = RequestMethod.PUT)
+  public BasicResult initCache() {
+    areaService.initCache();
+    return BasicResult.success();
   }
 }
