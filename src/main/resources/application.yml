@@ -10,8 +10,8 @@ server:
     context-path: /${spring.application.name}
 
 logging:
-  file: /data/logs/loc.log
-  path: /data/logs
+  file: /data/logs/${spring.application.name}/${spring.application.name}.log.
+  path: /data/logs/${spring.application.name}
 
 loc:
   web:
