@@ -13,9 +13,11 @@ logging:
   file: /data/logs/${spring.application.name}/${spring.application.name}.log.
   path: /data/logs/${spring.application.name}
 
+
 loc:
   web:
     springmvc:
+      cors.enabled: true
       swagger2:
         restapi:
           base-package: com.loc.admin.basic.controller

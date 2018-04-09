@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created on 2018/4/7.
  */
 @RestController
-@RequestMapping(value = "/area")
+@RequestMapping(value = "/district")
 @Slf4j
 public class DistrictController {
 
